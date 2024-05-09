@@ -79,6 +79,7 @@ return [
                 'quests' => App\GraphQL\Queries\Quest\QuestsQuery::class,
                 'category' => App\GraphQL\Queries\Category\CategoryQuery::class,
                 'categories' => App\GraphQL\Queries\Category\CategoriesQuery::class,
+                'user' => App\GraphQL\Queries\User\UserQuery::class,
             ],
             'mutation' => [
                  'createQuest' => App\GraphQL\Mutations\Quest\CreateQuestMutation::class,
@@ -108,6 +109,7 @@ return [
         // \Rebing\GraphQL\Support\UploadType::class,
         'Category' => App\GraphQL\Types\CategoryType::class,
         'Quest' => App\GraphQL\Types\QuestType::class,
+        'User' => App\GraphQL\Types\UserType::class,
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.

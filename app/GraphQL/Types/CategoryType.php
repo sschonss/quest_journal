@@ -29,6 +29,26 @@ class CategoryType extends GraphQLType
             'quests' => [
                 'type' => Type::listOf(GraphQL::type('Quest')),
                 'description' => 'The quests of the category'
+            ],
+            'hash' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'The hash of the category'
+            ],
+            'created_at' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Date when category was created'
+            ],
+            'updated_at' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Date when category was updated'
+            ],
+            'user_created' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'User who created the category'
+            ],
+            'journal_name' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Journal name of the category'
             ]
         ];
     }

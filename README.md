@@ -297,7 +297,7 @@ Dentro do Postman, você pode fazer as requisições para testar.
 
 #### Exemplo Busca com ID específico
 
-```json
+```
 {
     category(id: 1) {
         id
@@ -308,7 +308,7 @@ Dentro do Postman, você pode fazer as requisições para testar.
 
 #### Exemplo Busca de todos
 
-```json
+```
 {
     categories {
         id
@@ -321,7 +321,7 @@ Dentro do Postman, você pode fazer as requisições para testar.
 
 #### Exemplo de criação
 
-```json
+```
 mutation {
     createCategory(
         title: "Nova Categoria"
@@ -334,7 +334,7 @@ mutation {
 
 #### Exemplo de atualização
 
-```json
+```
 mutation {
     updateCategory(
         id: 1,
@@ -348,7 +348,7 @@ mutation {
 
 #### Exemplo de exclusão
 
-```json
+```
 mutation {
     deleteCategory(id: 12)
 }
