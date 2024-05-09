@@ -10,8 +10,8 @@ use Rebing\GraphQL\Support\Facades\GraphQL;
 class DeleteQuestMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'deleteQuest',
-        'description' => 'Deletes a quest'
+        'name' => 'deleteCategory',
+        'description' => 'deletes a category'
     ];
 
     public function type(): Type
@@ -24,16 +24,16 @@ class DeleteQuestMutation extends Mutation
         return [
             'id' => [
                 'name' => 'id',
-                'type' => Type::nonNull(Type::int()),
-                'rules' => ['exists:quests']
+                'type' => Type::int(),
+                'rules' => ['required']
             ]
         ];
     }
 
-    public function resolve($root, $args): bool
+    public function resolve($root, $args)
     {
-        $category = Quest::findOrFail($args['id']);
+        $quest = Quest::findOrFail($args['id']);
 
-        return (bool)$category->delete();
+        return  $quest->delete() ? true : false;
     }
 }

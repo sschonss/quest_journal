@@ -30,10 +30,10 @@ class DeleteCategoryMutation extends Mutation
         ];
     }
 
-    public function resolve($root, $args): bool
+    public function resolve($root, $args)
     {
         $category = Category::findOrFail($args['id']);
 
-        return (bool)$category->delete();
+        return  $category->delete() ? true : false;
     }
 }
